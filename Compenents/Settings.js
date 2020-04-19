@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { View, TouchableOpacity, TextInput, StyleSheet, FlatList,Text, AsyncStorage, Alert,Switch } from 'react-native'
+import React from 'react'
+import { View, TouchableOpacity, StyleSheet, FlatList,Text, AsyncStorage, Alert } from 'react-native'
 import SettingsItem from '../Compenents/SettingsItem'
 
 class Settings extends React.Component {

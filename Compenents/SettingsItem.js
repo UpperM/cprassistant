@@ -1,7 +1,6 @@
-import React, {useState} from 'react'
-import { View, AsyncStorage, TextInput, StyleSheet, Switch,Text, TouchableOpacity} from 'react-native'
-import moment from 'moment'
-import DialogInput from 'react-native-dialog-input';
+import React from 'react'
+import { View,StyleSheet, Text, TouchableOpacity} from 'react-native'
+import DialogInput from '../Modules/DialogInput';
 
 class SettingsItem extends React.Component {
 

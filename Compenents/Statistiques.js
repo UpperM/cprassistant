@@ -1,9 +1,6 @@
 import * as React from 'react'
-import { View, Button, TextInput, StyleSheet, FlatList,Text, AsyncStorage} from 'react-native'
+import { View, StyleSheet, FlatList,AsyncStorage} from 'react-native'
 import StatistiquesItem from '../Compenents/StatistiquesItem'
-import StatistiquesDetails from '../Compenents/StatistiquesDetails'
-import { createStackNavigator } from '@react-navigation/stack';
-import { useIsFocused } from '@react-navigation/native';
 
 class Statistiques extends React.Component {
 

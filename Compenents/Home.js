@@ -2,9 +2,8 @@ import React from 'react'
 import { View, Button, TextInput, StyleSheet, TouchableOpacity,Text, AsyncStorage, PermissionsAndroid,Platform} from 'react-native'
 import ProgressCircle from 'react-native-progress-circle'
 import moment, { unix } from "moment";
-import DialogInput from 'react-native-dialog-input';
+import DialogInput from '../Modules/DialogInput';
 import Toast from 'react-native-simple-toast';
-import Voice from '@react-native-community/voice';
 import {
     Player,
     Recorder,

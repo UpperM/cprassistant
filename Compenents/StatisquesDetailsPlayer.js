@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Button, TextInput, StyleSheet, FlatList,Text, TouchableOpacity} from 'react-native'
+import { StyleSheet, Text, TouchableOpacity} from 'react-native'
 import moment from 'moment'
 import { Player } from '@react-native-community/audio-toolkit'
 

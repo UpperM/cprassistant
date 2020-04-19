@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Button, TextInput, StyleSheet, FlatList,Text, TouchableOpacity} from 'react-native'
+import { View, StyleSheet,Text} from 'react-native'
 import moment from 'moment'
 
 class DetailsChoc extends React.Component {
