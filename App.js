@@ -22,13 +22,14 @@ export default class App extends React.Component {
             },
             {
                 id: 'adrenaline_unit',
-                title: 'Quantité d\'adrénaline injecté',
+                title: 'Quantité d\'adrénaline injectée',
                 value: '1'
             },
             {
                 id: 'adrenaline_repeat',
-                title: 'Répéter l\'alerte d\'adrènaline',
+                title: 'Répéter l\'alerte d\'adrénaline',
                 value: '2'
+                
             }
       ]
       AsyncStorage.setItem("settings",JSON.stringify(settings))

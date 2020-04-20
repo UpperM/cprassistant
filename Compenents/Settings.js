@@ -48,7 +48,7 @@ class Settings extends React.Component {
     _askForEraseData = () =>{
       Alert.alert(
         "Effacer mes données",
-        "Êtes-vous sûr de vouloir supprimer toutes vos données ? Cette action est irversible",
+        "Êtes-vous sûr de vouloir supprimer toutes vos données ? Cette action est irreversible",
         [
           {
             text: "Annuler",

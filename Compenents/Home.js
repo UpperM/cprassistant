@@ -21,10 +21,12 @@ class Home extends React.Component {
             patient_name: undefined,
             choc: [],
             adrenaline: [],
+            intubation: undefined,
             records: [],
             initialTimer : undefined,
             timer: 0,
             buttonVisibility: true,
+            showIntubation: true,
             stopwatch: 0,
             timerEndIn: 0,
             progressPercent:100,
@@ -202,10 +204,10 @@ class Home extends React.Component {
             patient_name: this.state.patient_name,
             choc: this.state.choc,
             adrenaline: this.state.adrenaline,
-            records : this.state.records
+            records : this.state.records,
+            intubation: this.state.intubation
         }
 
-        console.log(array)
         AsyncStorage.getItem('cpr')
         .then((cpr) => {
           const c = cpr ? JSON.parse(cpr) : [];
@@ -234,6 +236,13 @@ class Home extends React.Component {
         })
     }
 
+    _addIntubation() {
+        this.setState({
+            intubation: new Date(),
+            showIntubation: false
+        })
+    }
+
     _incrementAdrenaline() {
         this.setState({adrenaline: [...this.state.adrenaline, new Date()]})
         this.setState({progressPercent: 100})
@@ -251,7 +260,9 @@ class Home extends React.Component {
             adrenaline: [],
             choc: [],
             progressPercent:100,
-            isInProgress: false
+            isInProgress: false,
+            showIntubation: true,
+            intubation: undefined
         })
 
         this._stopChronometer()
@@ -303,12 +314,17 @@ class Home extends React.Component {
                     <Text style={styles.textButton}>Administration d'adrénaline ({this._formatSecondToTime(this.state.timer)})</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button} onPress={() => this._onRecordPress()}>
-            <Text style={styles.textButton}>{this.state.isRecording ? 'Arreter l\'Enregistrement' : 'Enregistrement vocal'}</Text>
+                {this.state.showIntubation &&
+                <TouchableOpacity style={styles.button} onPress={() => this._addIntubation()}>
+                    <Text style={styles.textButton}>Intubation orotrachéale</Text>
                 </TouchableOpacity>
-
+                }
                 <TouchableOpacity style={styles.button} onPress={() => this._incrementChoc()}>
                     <Text style={styles.textButton}>Choc</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.button} onPress={() => this._onRecordPress()}>
+                    <Text style={styles.textButton}>{this.state.isRecording ? 'Arrêter l\'Enregistrement' : 'Enregistrement vocal'}</Text>
                 </TouchableOpacity>
 
                 <View style={styles.countContainer}>
@@ -457,12 +473,15 @@ const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: "#c95959",
         padding: 10,
-        margin: 10
+        margin: 10,
+        justifyContent: 'center', //Centered vertically
+        alignItems: 'center', // Centered horizontally
+        flex: 0.1
     },
 
     buttonRedText: {
         color: '#DDDDDD',
-        fontSize: 15
+        fontSize: 23,
     },
 
     button: {

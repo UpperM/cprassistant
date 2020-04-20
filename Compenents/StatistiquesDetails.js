@@ -70,6 +70,7 @@ class StatistiquesDetails extends React.Component {
             <Text style={{fontSize: 15}}>Début du massage : {this._convertDate(this.state.cpr["start_cpr"])}</Text>
             <Text style={{fontSize: 15}}>Fin du massage : {this._convertDate(this.state.cpr["end_cpr"])}</Text>
             <Text style={{fontSize: 15}}>Durée totale : {this._getTimeDifference(this._convertDate(this.state.cpr["start_cpr"]),this._convertDate(this.state.cpr["end_cpr"]))}</Text>
+            <Text style={{fontSize: 15}}>Intubation : {this._convertDate(this.state.cpr["intubation"])} ({this._getTimeDifference(this._convertDate(this.state.cpr["start_cpr"]),this._convertDate(this.state.cpr["intubation"]))})</Text>
 
             <Text style={styles.listTitle}>Liste des chocs</Text>
             <FlatList
@@ -81,7 +82,7 @@ class StatistiquesDetails extends React.Component {
               }}
             />
 
-            <Text style={styles.listTitle}>Adrénaline administré</Text>
+            <Text style={styles.listTitle}>Adrénaline injectée</Text>
             <FlatList
             data={this.state.adrenaline}
             keyExtractor={(item) => item.toString()} // Clef unique

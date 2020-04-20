@@ -61,7 +61,7 @@ class SettingsItem extends React.Component {
                 break
             case 'adrenaline_unit':
                 this.setState({
-                    dialogTitle: "Quantité d'adrènaline administré",
+                    dialogTitle: "Quantité d'adrénaline injectée",
                     settingId: id,
                     isDialogVisible: true
                 })
