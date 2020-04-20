@@ -252,7 +252,6 @@ class Home extends React.Component {
     }
 
     _endCpr() {
-
         deactivateKeepAwake()
         this._getCprInfos()
         this._storeCprInfos()

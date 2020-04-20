@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#f7f8fa',
         flex: 1
     },
-
     textinput: {
       marginLeft: 5,
       marginRight: 5,

@@ -29,7 +29,6 @@ export default class App extends React.Component {
                 id: 'adrenaline_repeat',
                 title: 'Répéter l\'alerte d\'adrénaline',
                 value: '2'
-                
             }
       ]
       AsyncStorage.setItem("settings",JSON.stringify(settings))

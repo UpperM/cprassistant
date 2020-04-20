@@ -122,7 +122,6 @@ const styles = StyleSheet.create({
     flex:1,
     margin: 10
   },
-
   patientName: {
     fontSize: 20,
     fontWeight: 'bold',
@@ -132,7 +131,6 @@ const styles = StyleSheet.create({
   chocList: {
     marginTop: 15,
   },
-
   listTitle: {
     fontSize: 18,
     textAlign: 'center',

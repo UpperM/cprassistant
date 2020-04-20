@@ -14,7 +14,6 @@ class SettingsItem extends React.Component {
         }
     }
 
-
     _displayDialog (value) {
         this.setState({ isDialogVisible: value });
     }

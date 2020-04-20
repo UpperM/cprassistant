@@ -23,7 +23,7 @@ class Settings extends React.Component {
       this._getSettingValue('adrenaline_repeat') == 'true' ? this.setState({adrenaline_repeat: true}) : this.setState({adrenaline_repeat: true})
     }
 
-     _getSettingValue(id) {
+    _getSettingValue(id) {
       var value = this.state.settings.filter(data => data.id == id).map(item => item.value)
       return value.toString()
      }

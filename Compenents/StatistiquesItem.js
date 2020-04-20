@@ -16,7 +16,6 @@ class StatistiquesItem extends React.Component {
     }
 }
 
-
 const styles = StyleSheet.create({
   main_container: {
     height: 60,

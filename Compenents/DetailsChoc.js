@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
       borderBottomColor: '#666666',
       borderBottomWidth: 0.5,
     },
-
     choc_minute: {
         fontSize: 15,
         flex: 1,
