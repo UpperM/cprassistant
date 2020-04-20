@@ -4,6 +4,7 @@ import ProgressCircle from 'react-native-progress-circle'
 import moment, { unix } from "moment";
 import DialogInput from '../Modules/DialogInput';
 import Toast from 'react-native-simple-toast';
+import { useKeepAwake, activateKeepAwake } from 'expo-keep-awake';
 import {
     Player,
     Recorder,
@@ -252,6 +253,7 @@ class Home extends React.Component {
 
     _endCpr() {
 
+        deactivateKeepAwake()
         this._getCprInfos()
         this._storeCprInfos()
 
@@ -278,13 +280,14 @@ class Home extends React.Component {
     }
 
     _startCpr () {
-
+        activateKeepAwake()
         this.setState({
             isInProgress: true,
             start_cpr: new Date()
         }, () => {
             this.startTimer()
             this._startChronometer()
+
         })
 
     }
