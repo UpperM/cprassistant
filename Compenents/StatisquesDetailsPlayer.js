@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, TouchableOpacity} from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, AsyncStorage} from 'react-native'
 import moment from 'moment'
 import { Player } from '@react-native-community/audio-toolkit'
 
@@ -7,9 +7,10 @@ class StatisquesDetailsPlayer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isPlaying: false
+      isPlaying: false,
     }
   }
+
 
 
   _destroyPlayer() {
@@ -35,7 +36,6 @@ class StatisquesDetailsPlayer extends React.Component {
   }
 
   _convertDate(date) {
-    console.log("Origine : " + date)
     date = date.replace("cpr_record_","")
     date = date.replace("_",":")
     date = date.replace("_",":")

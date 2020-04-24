@@ -4,7 +4,7 @@ import ProgressCircle from 'react-native-progress-circle'
 import moment, { unix } from "moment";
 import DialogInput from '../Modules/DialogInput';
 import Toast from 'react-native-simple-toast';
-import { useKeepAwake, activateKeepAwake } from 'expo-keep-awake';
+import { activateKeepAwake, deactivateKeepAwake } from 'expo-keep-awake';
 import {
     Player,
     Recorder,

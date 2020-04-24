@@ -23,8 +23,8 @@ class Statistiques extends React.Component {
         this.props.navigation.navigate("StatistiquesDetails", {cpr: cpr})
     }
 
-
     _displayList() {
+        console.log(this.state.cprData)
         return(
             <FlatList
             data={this.state.cprData}

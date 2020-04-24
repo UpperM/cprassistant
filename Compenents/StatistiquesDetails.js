@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View, Text, AsyncStorage, FlatList } from 'react-native'
+import { StyleSheet, View, Text, AsyncStorage, FlatList, Alert } from 'react-native'
 import moment from 'moment'
 import DetailsChoc from '../Compenents/DetailsChoc'
 import StatisquesDetailsPlayer from '../Compenents/StatisquesDetailsPlayer'
@@ -14,12 +14,26 @@ class StatistiquesDetails extends React.Component {
       choc: undefined,
       isLoading: true,
       isPlaying: false,
-      cprData: undefined
+      cprData: undefined,
+      settings: undefined,
+      adrenaline_unit: undefined
     }
+  }
+  // Retrieve settings from AsyncStorage
+  _getSettings = async () => {
+    await AsyncStorage.getItem('settings').then((settings) => {
+        const s = settings ? JSON.parse(settings) : []; // get array
+        this.setState({settings: s})
+    })
+
+    const index = this.state.settings.findIndex(element => element.id == "adrenaline_unit" )
+    this.setState({adrenaline_unit: this.state.settings[index].value})
   }
 
 
   componentDidMount() {
+    this._getSettings()
+
       this.setState({
         cpr: this.props.route.params.cpr,
         choc: this.props.route.params.cpr.choc,
@@ -42,14 +56,35 @@ class StatistiquesDetails extends React.Component {
   }
 
   _deleteRecord () {
-    console.log(this.state.cprData)
-        this.setState(prevState => ({
+    this.setState(prevState => ({
       cprData : prevState.cprData.filter(item => item["start_cpr"] !== this.state.cpr["start_cpr"])
     }), () => {
       this._saveCprInfos()
       this.props.navigation.goBack();
     });
+  }
 
+  _askForEdit() {
+    this.props.navigation.navigate("StatistiquesEdit", {cpr: this.state.cpr})
+  }
+
+  _askForEraseData = () =>{
+    Alert.alert(
+      "Effacer le patient",
+      "Êtes-vous sûr de vouloir supprimer ce patient ? Cette action est irreversible",
+      [
+        {
+          text: "Annuler",
+          onPress: () => {},
+          style: "Cancel"
+        },
+        {
+          text: "Effacer",
+          onPress: () => this._deleteRecord()
+        }
+      ],
+      { cancelable: false }
+    )
   }
 
   _getTimeDifference(start,end) {
@@ -82,7 +117,7 @@ class StatistiquesDetails extends React.Component {
               }}
             />
 
-            <Text style={styles.listTitle}>Adrénaline injectée</Text>
+            <Text style={styles.listTitle}>Adrénaline injectée {this.state.adrenaline.length * this.state.adrenaline_unit} mg</Text>
             <FlatList
             data={this.state.adrenaline}
             keyExtractor={(item) => item.toString()} // Clef unique
@@ -100,9 +135,16 @@ class StatistiquesDetails extends React.Component {
               flexGrow: 1,
               }}
             />
-          <TouchableOpacity onPress={() => this._deleteRecord()}>
-            <Text style={styles.erase_data}>Supprimer ce patient</Text>
-          </TouchableOpacity>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <TouchableOpacity onPress={() => this._askForEraseData()}>
+              <Text style={styles.erase_data}>Supprimer ce patient</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => this._askForEdit()}>
+              <Text style={styles.edit_data}>Editer ce patient</Text>
+            </TouchableOpacity>
+          </View>
+
         </View>
       )
     }
@@ -141,7 +183,10 @@ const styles = StyleSheet.create({
     marginRight: 20,
     fontSize: 16,
     color: 'red',
-    textAlign: 'center'
+  },
+  edit_data: {
+    marginLeft: 50,
+    fontSize: 16,
   }
 })
 

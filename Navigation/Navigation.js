@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import Home from '../Compenents/Home'
 import Statistiques from '../Compenents/Statistiques'
 import StatistiquesDetails from '../Compenents/StatistiquesDetails'
 import Settings from '../Compenents/Settings'
-
+import StatistiquesEdit from '../Compenents/StatistiquesEdit'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -29,7 +29,7 @@ const Tabs = () => (
       component={Stacks}
 
       options={{
-        tabBarLabel: 'Statistiques',
+        tabBarLabel: 'Comptes rendus',
         tabBarIcon: ({ color }) => (
           <MaterialCommunityIcons name="account-heart" color={color} size={26} />
         ),
@@ -54,10 +54,17 @@ const Tabs = () => (
 const Stack = createStackNavigator();
 const Stacks = () => (
   <Stack.Navigator>
-    <Stack.Screen name="Statistiques" component={Statistiques}  />
+    <Stack.Screen name="Statistiques" component={Statistiques} options={{
+      headerTitle: "Comptes rendus"
+    }}  />
     <Stack.Screen name="StatistiquesDetails" component={StatistiquesDetails} options={{
-      headerTitle: "Détails du patient"
+      headerTitle: "Détails du compte rendu",
     }}/>
+
+  <Stack.Screen name="StatistiquesEdit" component={StatistiquesEdit} options={{
+      headerTitle: "Edition du compte rendu",
+    }}/>
+
   </Stack.Navigator>
 )
 

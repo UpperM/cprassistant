@@ -99,6 +99,7 @@ class Settings extends React.Component {
             <View style={{marginTop: 50}}>
               <Text style={styles.header}>Mes règlages</Text>
               <FlatList
+                scrollEnabled={false}
                 data={this.state.settings}
                 renderItem={({ item }) => <SettingsItem settings={item} setSettings={this._setSettings} toggle={this._handleToggle}  />}
                 keyExtractor={item => item.id}
@@ -108,7 +109,7 @@ class Settings extends React.Component {
             <View>
               <Text style={styles.header}>Mes données</Text>
                 <TouchableOpacity  style={styles.main_container} onPress={() => {this._askForEraseData()}}>
-                  <Text style={styles.erase_data}>Effacer mes données</Text>
+                  <Text style={styles.erase_data}>Effacer tous les comptes rendus</Text>
                 </TouchableOpacity>
             </View>
           </View>
