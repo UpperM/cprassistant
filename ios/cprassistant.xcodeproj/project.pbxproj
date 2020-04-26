@@ -10,12 +10,12 @@
 		0731D3B824204D62009CAE85 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0731D3B524204D62009CAE85 /* Expo.plist */; };
 		074F4BDC2432833400BDB9FE /* app.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 07C2E6E4243282B30028AF0A /* app.bundle */; };
 		074F4BDD2432833400BDB9FE /* app.manifest in Resources */ = {isa = PBXBuildFile; fileRef = 07C2E6E3243282B30028AF0A /* app.manifest */; };
-		08ACBD16244C751200522764 /* reminder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 08ACBD15244C751200522764 /* reminder.mp3 */; };
+		089F139E244FE14500E04F78 /* reminder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 089F139D244FE14500E04F78 /* reminder.mp3 */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		3DE4DAD41476765101945408 /* libPods-cprassistant.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D43FF9D506E70904424FA7E9 /* libPods-cprassistant.a */; };
+		3EC293A24A9F64AB60FF5E83 /* libPods-cprassistant.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A5903C420540D27B6B21C2 /* libPods-cprassistant.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,8 +23,7 @@
 		0731D3B524204D62009CAE85 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Expo.plist; path = cprassistant/Supporting/Expo.plist; sourceTree = "<group>"; };
 		07C2E6E3243282B30028AF0A /* app.manifest */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = app.manifest; path = cprassistant/Supporting/app.manifest; sourceTree = "<group>"; };
 		07C2E6E4243282B30028AF0A /* app.bundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = app.bundle; path = cprassistant/Supporting/app.bundle; sourceTree = "<group>"; };
-		08ACBD15244C751200522764 /* reminder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = reminder.mp3; path = ../../../reminder.mp3; sourceTree = "<group>"; };
-		08ACBD17244C763C00522764 /* reminder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = reminder.mp3; sourceTree = "<group>"; };
+		089F139D244FE14500E04F78 /* reminder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = reminder.mp3; path = ../android/app/src/main/res/raw/reminder.mp3; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* CPR Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CPR Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = cprassistant/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = cprassistant/AppDelegate.m; sourceTree = "<group>"; };
@@ -33,9 +32,9 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = cprassistant/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = cprassistant/main.m; sourceTree = "<group>"; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B47C5AFCB8BDE514B7D1AC6 /* Pods-cprassistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cprassistant.debug.xcconfig"; path = "Target Support Files/Pods-cprassistant/Pods-cprassistant.debug.xcconfig"; sourceTree = "<group>"; };
-		8AC623DBF3A3E2CB072F81F2 /* Pods-cprassistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cprassistant.release.xcconfig"; path = "Target Support Files/Pods-cprassistant/Pods-cprassistant.release.xcconfig"; sourceTree = "<group>"; };
-		D43FF9D506E70904424FA7E9 /* libPods-cprassistant.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cprassistant.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32FBA129FE762F8A3EAEA114 /* Pods-cprassistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cprassistant.debug.xcconfig"; path = "Target Support Files/Pods-cprassistant/Pods-cprassistant.debug.xcconfig"; sourceTree = "<group>"; };
+		333BCEC035C492E9DBD17144 /* Pods-cprassistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cprassistant.release.xcconfig"; path = "Target Support Files/Pods-cprassistant/Pods-cprassistant.release.xcconfig"; sourceTree = "<group>"; };
+		92A5903C420540D27B6B21C2 /* libPods-cprassistant.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cprassistant.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -45,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DE4DAD41476765101945408 /* libPods-cprassistant.a in Frameworks */,
+				3EC293A24A9F64AB60FF5E83 /* libPods-cprassistant.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,8 +54,8 @@
 		13B07FAE1A68108700A75B9A /* cprassistant */ = {
 			isa = PBXGroup;
 			children = (
-				08ACBD17244C763C00522764 /* reminder.mp3 */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
+				089F139D244FE14500E04F78 /* reminder.mp3 */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -76,7 +75,7 @@
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
-				D43FF9D506E70904424FA7E9 /* libPods-cprassistant.a */,
+				92A5903C420540D27B6B21C2 /* libPods-cprassistant.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -84,8 +83,8 @@
 		72E5486571395D51695C2A02 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B47C5AFCB8BDE514B7D1AC6 /* Pods-cprassistant.debug.xcconfig */,
-				8AC623DBF3A3E2CB072F81F2 /* Pods-cprassistant.release.xcconfig */,
+				32FBA129FE762F8A3EAEA114 /* Pods-cprassistant.debug.xcconfig */,
+				333BCEC035C492E9DBD17144 /* Pods-cprassistant.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -100,7 +99,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				08ACBD15244C751200522764 /* reminder.mp3 */,
 				13B07FAE1A68108700A75B9A /* cprassistant */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
@@ -127,13 +125,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "cprassistant" */;
 			buildPhases = (
-				F8BC737F2AD7A05944D9E2A1 /* [CP] Check Pods Manifest.lock */,
+				ADE33D75750761C3B6E49F98 /* [CP] Check Pods Manifest.lock */,
 				FD4C38642228810C00325AF5 /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle Expo Assets */,
-				C6E09F5B00D54321E00C2724 /* [CP] Copy Pods Resources */,
+				89DB9FDAC3CCB890D4482D8D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -154,7 +152,7 @@
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = CUDS8F479B;
+						DevelopmentTeam = KNC9N5N254;
 					};
 				};
 			};
@@ -184,7 +182,7 @@
 			files = (
 				074F4BDC2432833400BDB9FE /* app.bundle in Resources */,
 				074F4BDD2432833400BDB9FE /* app.manifest in Resources */,
-				08ACBD16244C751200522764 /* reminder.mp3 in Resources */,
+				089F139E244FE14500E04F78 /* reminder.mp3 in Resources */,
 				0731D3B824204D62009CAE85 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
@@ -208,7 +206,7 @@
 			shellPath = /bin/sh;
 			shellScript = "../node_modules/expo-updates/bundle-expo-assets.sh\n";
 		};
-		C6E09F5B00D54321E00C2724 /* [CP] Copy Pods Resources */ = {
+		89DB9FDAC3CCB890D4482D8D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,7 +254,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cprassistant/Pods-cprassistant-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F8BC737F2AD7A05944D9E2A1 /* [CP] Check Pods Manifest.lock */ = {
+		ADE33D75750761C3B6E49F98 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -326,12 +324,12 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B47C5AFCB8BDE514B7D1AC6 /* Pods-cprassistant.debug.xcconfig */;
+			baseConfigurationReference = 32FBA129FE762F8A3EAEA114 /* Pods-cprassistant.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = CUDS8F479B;
+				DEVELOPMENT_TEAM = KNC9N5N254;
 				INFOPLIST_FILE = cprassistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -352,11 +350,11 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8AC623DBF3A3E2CB072F81F2 /* Pods-cprassistant.release.xcconfig */;
+			baseConfigurationReference = 333BCEC035C492E9DBD17144 /* Pods-cprassistant.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CUDS8F479B;
+				DEVELOPMENT_TEAM = KNC9N5N254;
 				INFOPLIST_FILE = cprassistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
