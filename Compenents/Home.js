@@ -5,6 +5,7 @@ import moment, { unix } from "moment";
 import DialogInput from '../Modules/DialogInput';
 import Toast from 'react-native-simple-toast';
 import { activateKeepAwake, deactivateKeepAwake } from 'expo-keep-awake';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import {
     Player,
     Recorder,
@@ -15,7 +16,7 @@ class Home extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            isInProgress: false,
+            isInProgress: true,
             allCpr: [],
             cpr_id: undefined,
             start_cpr: undefined,
@@ -49,11 +50,13 @@ class Home extends React.Component {
         this.player = null
         this.repeatCount = 0
         let recordAudioRequest;
+
         if (Platform.OS == 'android') {
           recordAudioRequest = this._requestRecordAudioPermission();
         } else {
           recordAudioRequest = new Promise(function (resolve, reject) { resolve(true); });
         }
+
     }
 
 
@@ -411,7 +414,6 @@ class Home extends React.Component {
 
     render() {
         //AsyncStorage.clear();
-        console.log("render")
         return(
             <View style={styles.container}>
 
@@ -421,8 +423,8 @@ class Home extends React.Component {
             <View style={styles.ProgressCircle}>
             <ProgressCircle
                 percent={this.state.progressPercent}
-                radius={100}
-                borderWidth={9}
+                radius={hp('12%')}
+                borderWidth={hp('1%')}
                 color="#3399FF"
                 shadowColor="#999"
                 bgColor="#fff"
@@ -431,8 +433,6 @@ class Home extends React.Component {
             </ProgressCircle>
 
             </View>
-
-
 
             <TouchableOpacity style={styles.buttonRed} onPress={() => this._handleStartButton()}>
                 <Text style={styles.buttonRedText}>{this._setTextStartButton()}</Text>
@@ -460,45 +460,44 @@ class Home extends React.Component {
 }
 
 const styles = StyleSheet.create({
+
     timer: {
         alignItems: "center",
-        fontSize: 30
+        fontSize: wp('8%')
     },
 
     container: {
       flex: 1,
       justifyContent: "center",
-      paddingHorizontal: 10
     },
 
     buttonRed: {
         alignItems: "center",
         backgroundColor: "#c95959",
-        padding: 10,
-        margin: 10,
+        padding: hp('2%'),
+        margin: wp('2%'),
         justifyContent: 'center', //Centered vertically
         alignItems: 'center', // Centered horizontally
-        flex: 0.1
     },
 
     buttonRedText: {
         color: '#DDDDDD',
-        fontSize: 23,
+        fontSize: hp('2.5%')
     },
 
     button: {
       alignItems: "center",
       backgroundColor: "#DDDDDD",
-      padding: 10,
-      margin: 10
+      padding: wp('3%'),
+      margin: hp('1%')
     },
 
     textButton: {
-        fontSize: 15
+        fontSize: hp('2%')
     },
     countContainer: {
       alignItems: "center",
-      padding: 10
+      padding: hp('1%')
     },
     ProgressCircle: {
         justifyContent: 'center',
