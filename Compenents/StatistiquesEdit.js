@@ -1,11 +1,11 @@
 import React from 'react'
-import { StyleSheet, View, Text, AsyncStorage, FlatList, Alert } from 'react-native'
+import { StyleSheet, View, Text, AsyncStorage} from 'react-native'
 import moment from 'moment'
-import DetailsChoc from '../Compenents/DetailsChoc'
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import DialogInput from '../Modules/DialogInput';
 import Toast from 'react-native-simple-toast';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 class StatistiquesEdit extends React.Component {
   constructor(props) {
@@ -234,22 +234,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin:5
   },
-  chocList: {
-    marginTop: 15,
-  },
-  listTitle: {
-    fontSize: 18,
-    textAlign: 'center',
-    marginTop: 20
-  },
+
   save_data: {
-    margin: 10,
-    fontSize: 18,
+    margin: hp('1%'),
+    fontSize: wp('5%'),
     color: 'green',
     textAlign: 'center'
   },
   main_container: {
-    height: 60,
+    height: hp('7%'),
     flexDirection: 'row',
     borderTopWidth: 1,
     borderColor: '#f8f8f8',
@@ -257,14 +250,14 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   settings_name: {
-    margin: 10,
-    fontSize: 16,
+    margin: wp('2%'),
+    fontSize: wp('4%'),
     flex: 1,
     flexWrap: 'wrap',
 },
 settings_value: {
-    marginRight: 20,
-    fontSize: 16,
+  marginRight: wp('4%'),
+  fontSize: wp('4%'),
     color: '#666666'
 },
 })

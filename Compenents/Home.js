@@ -16,7 +16,7 @@ class Home extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            isInProgress: true,
+            isInProgress: false,
             allCpr: [],
             cpr_id: undefined,
             start_cpr: undefined,

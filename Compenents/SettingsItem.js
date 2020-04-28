@@ -1,6 +1,7 @@
 import React from 'react'
 import { View,StyleSheet, Text, TouchableOpacity} from 'react-native'
 import DialogInput from '../Modules/DialogInput';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 class SettingsItem extends React.Component {
 
@@ -104,7 +105,7 @@ class SettingsItem extends React.Component {
 
 const styles = StyleSheet.create({
     main_container: {
-      height: 60,
+      height: hp('7%'),
       flexDirection: 'row',
       borderTopWidth: 1,
       borderColor: '#f8f8f8',
@@ -114,14 +115,14 @@ const styles = StyleSheet.create({
       alignItems: 'center'
     },
     settings_name: {
-        margin: 10,
-        fontSize: 16,
+        margin: wp('2%'),
+        fontSize: wp('4%'),
         flex: 1,
         flexWrap: 'wrap',
     },
     settings_value: {
-        marginRight: 20,
-        fontSize: 16,
+        marginRight: wp('4%'),
+        fontSize: wp('4%'),
         color: '#666666'
     }
   })

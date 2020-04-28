@@ -1,7 +1,8 @@
 import React from 'react'
-import { StyleSheet, Text, TouchableOpacity, AsyncStorage} from 'react-native'
+import { StyleSheet, Text, TouchableOpacity} from 'react-native'
 import moment from 'moment'
 import { Player } from '@react-native-community/audio-toolkit'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 class StatisquesDetailsPlayer extends React.Component {
   constructor(props) {
@@ -59,21 +60,20 @@ class StatisquesDetailsPlayer extends React.Component {
 
 const styles = StyleSheet.create({
   main_container: {
-    margin:5,
-    height: 25,
+    margin:wp('1%'),
     flexDirection: 'row',
     borderBottomColor: '#666666',
     borderBottomWidth: 0.5,
   },
 
   record_name: {
-      fontSize: 15,
-      flex: 1,
-      flexWrap: 'wrap',
+    fontSize: wp('3.8%'),
+    flex: 1,
+    flexWrap: 'wrap',
     },
     play_button: {
       fontStyle: 'italic',
-      fontSize: 16,
+      fontSize: wp('3.8%'),
       color: '#666666'
     }
   })

@@ -4,6 +4,8 @@ import moment from 'moment'
 import DetailsChoc from '../Compenents/DetailsChoc'
 import StatisquesDetailsPlayer from '../Compenents/StatisquesDetailsPlayer'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 class StatistiquesDetails extends React.Component {
   constructor(props) {
     super(props)
@@ -102,10 +104,10 @@ class StatistiquesDetails extends React.Component {
         <View style={styles.main}>
             <Text style={styles.patientName}>{this.state.cpr["patient_name"]}</Text>
 
-            <Text style={{fontSize: 15}}>Début du massage : {this._convertDate(this.state.cpr["start_cpr"])}</Text>
-            <Text style={{fontSize: 15}}>Fin du massage : {this._convertDate(this.state.cpr["end_cpr"])}</Text>
-            <Text style={{fontSize: 15}}>Durée totale : {this._getTimeDifference(this._convertDate(this.state.cpr["start_cpr"]),this._convertDate(this.state.cpr["end_cpr"]))}</Text>
-            <Text style={{fontSize: 15}}>Intubation : {this._convertDate(this.state.cpr["intubation"])} ({this._getTimeDifference(this._convertDate(this.state.cpr["start_cpr"]),this._convertDate(this.state.cpr["intubation"]))})</Text>
+            <Text style={styles.text}>Début du massage : {this._convertDate(this.state.cpr["start_cpr"])}</Text>
+            <Text style={styles.text}>Fin du massage : {this._convertDate(this.state.cpr["end_cpr"])}</Text>
+            <Text style={styles.text}>Durée totale : {this._getTimeDifference(this._convertDate(this.state.cpr["start_cpr"]),this._convertDate(this.state.cpr["end_cpr"]))}</Text>
+            <Text style={styles.text}>Intubation : {this._convertDate(this.state.cpr["intubation"])} ({this._getTimeDifference(this._convertDate(this.state.cpr["start_cpr"]),this._convertDate(this.state.cpr["intubation"]))})</Text>
 
             <Text style={styles.listTitle}>Liste des chocs</Text>
             <FlatList
@@ -162,31 +164,33 @@ class StatistiquesDetails extends React.Component {
 const styles = StyleSheet.create({
   main: {
     flex:1,
-    margin: 10
+    margin: wp('1.5%')
   },
   patientName: {
-    fontSize: 20,
+    fontSize: wp('5%'),
     fontWeight: 'bold',
     textAlign: 'center',
-    margin:5
+    margin:wp('1%'),
   },
-  chocList: {
-    marginTop: 15,
-  },
+
   listTitle: {
-    fontSize: 18,
+    fontSize: wp('4%'),
+    fontWeight: 'bold',
     textAlign: 'center',
     marginTop: 20
   },
   erase_data: {
-    marginLeft: 10,
-    marginRight: 20,
-    fontSize: 16,
+    marginLeft: wp('4%'),
+    marginRight: wp('4%'),
+    fontSize: wp('4%'),
     color: 'red',
   },
   edit_data: {
-    marginLeft: 50,
-    fontSize: 16,
+    marginLeft: wp('14%'),
+    fontSize: wp('4%'),
+  },
+  text:{
+    fontSize: wp('4%')
   }
 })
 

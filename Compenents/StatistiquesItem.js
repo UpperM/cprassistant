@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity} from 'react-native'
 import moment from 'moment'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 class StatistiquesItem extends React.Component {
 
@@ -18,9 +19,9 @@ class StatistiquesItem extends React.Component {
 
 const styles = StyleSheet.create({
   main_container: {
-    height: 60,
+    height: hp('7%'),
     flexDirection: 'row',
-    borderTopWidth: 1.5,
+    borderTopWidth: 1,
     borderColor: '#f8f8f8',
     backgroundColor: '#ffffff',
     flex: 1,
@@ -29,15 +30,15 @@ const styles = StyleSheet.create({
   },
 
     patient_name: {
-      margin: 10,
-      fontSize: 18,
+      margin: wp('2%'),
+      fontSize: wp('4.5%'),
       flex: 1,
       flexWrap: 'wrap',
     },
     start_date: {
-      marginRight: 20,
+      marginRight: wp('4%'),
+      fontSize: wp('4%'),
       fontStyle: 'italic',
-      fontSize: 16,
       color: '#666666'
     }
   })

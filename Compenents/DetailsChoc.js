@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, StyleSheet,Text} from 'react-native'
 import moment from 'moment'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 class DetailsChoc extends React.Component {
     _convertDate(date) {
@@ -28,20 +29,19 @@ class DetailsChoc extends React.Component {
 
 const styles = StyleSheet.create({
     main_container: {
-      margin:5,
-      height: 25,
+      margin:wp('1%'),
       flexDirection: 'row',
       borderBottomColor: '#666666',
       borderBottomWidth: 0.5,
     },
     choc_minute: {
-        fontSize: 15,
+        fontSize: wp('3.8%'),
         flex: 1,
         flexWrap: 'wrap',
       },
       choc_date: {
         fontStyle: 'italic',
-        fontSize: 16,
+        fontSize: wp('3.8%'),
         color: '#666666'
       }
   })

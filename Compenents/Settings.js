@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, TouchableOpacity, StyleSheet, FlatList,Text, AsyncStorage, Alert } from 'react-native'
 import SettingsItem from '../Compenents/SettingsItem'
+import {widthPercentageToDP, heightPercentageToDP} from 'react-native-responsive-screen';
 
 class Settings extends React.Component {
 
@@ -96,7 +97,7 @@ class Settings extends React.Component {
 
         return (
           <View>
-            <View style={{marginTop: 50}}>
+            <View style={{marginTop: widthPercentageToDP('4%')}}>
               <Text style={styles.header}>Mes règlages</Text>
               <FlatList
                 scrollEnabled={false}
@@ -109,7 +110,7 @@ class Settings extends React.Component {
             <View>
               <Text style={styles.header}>Mes données</Text>
                 <TouchableOpacity  style={styles.main_container} onPress={() => {this._askForEraseData()}}>
-                  <Text style={styles.erase_data}>Effacer tous les comptes rendus</Text>
+                  <Text style={styles.settings_name}>Effacer tous les comptes rendus</Text>
                 </TouchableOpacity>
             </View>
           </View>
@@ -118,64 +119,29 @@ class Settings extends React.Component {
     }
 
     const styles = StyleSheet.create({
-      container: {
-        flex: 1,
-        marginRight:1,
-        backgroundColor: '#f7f8fa'
-      },
 
       header: {
-        fontSize: 20,
-        margin: 10
-      },
-
-      line: {
-        justifyContent: 'center',
-        alignSelf: 'center',
-        alignItems: 'center',
-        alignContent: 'center',
-        flexDirection: 'row',
-      },
-
-      input: {
-        borderRadius: 2,
-        borderWidth: 2,
-        borderColor: '#009688',
-        flex: 1,
-        padding: 5
-      },
-
-      text: {
-        textAlign: 'center',
-        padding: 15
+        fontSize: widthPercentageToDP('5.5%'),
+        margin: widthPercentageToDP('2%')
       },
 
       main_container: {
-        height: 60,
+        height: heightPercentageToDP('7%'),
         flexDirection: 'row',
         borderTopWidth: 1,
         borderColor: '#f8f8f8',
         backgroundColor: '#ffffff',
+        justifyContent: 'center',
         alignItems: 'center'
       },
+
       settings_name: {
-          margin: 10,
-          fontSize: 16,
+          margin: widthPercentageToDP('2%'),
+          fontSize: widthPercentageToDP('4%'),
           flex: 1,
           flexWrap: 'wrap',
+          color: 'red',
       },
-      settings_value: {
-          marginRight: 20,
-          fontSize: 16,
-          color: '#666666'
-      },
-      erase_data: {
-        marginLeft: 10,
-        marginRight: 20,
-        fontSize: 16,
-        color: 'red',
-        textAlign: 'left'
-      }
     });
 
 

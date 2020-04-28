@@ -79,3 +79,5 @@ buck-out/
 
 # Expo
 .expo/*
+package-lock.json
+*.hprof

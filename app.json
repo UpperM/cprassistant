@@ -23,10 +23,10 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "fr.matthieucourtois.cprassistant"
+      "bundleIdentifier": "com.cprassistant"
     },
     "android": {
-      "package": "fr.matthieucourtois.cprassistant"
+      "package": "com.cprassistant"
     },
     "entryPoint": "node_modules/expo/AppEntry.js"
   }
