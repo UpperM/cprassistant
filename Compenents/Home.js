@@ -123,7 +123,7 @@ class Home extends React.Component {
             PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
             {
               title: 'Microphone Permission',
-              message: 'CPR Assistant à besoin d\'accèder à votre microphone',
+              message: 'CPR Assistant à besoin d\'accèder à votre microphone pour la fonction d\'enregistrement vocal',
               buttonNeutral: 'Plus tard',
               buttonNegative: 'Non',
               buttonPositive: 'Oui',
@@ -158,18 +158,23 @@ class Home extends React.Component {
         this.recorder.toggleRecord()
     }
 
-    _onRecordPress() {
-        if (this.state.isRecording)
-        {
-            //Stop record
-            Toast.show('Enregistrement effectué')
-            this.setState({isRecording: false});
-            this.recorder.destroy()
+    async _onRecordPress() {
+        if(await this._requestRecordAudioPermission()) {
+
+            if (this.state.isRecording)
+            {
+                //Stop record
+                Toast.show('Enregistrement effectué')
+                this.setState({isRecording: false});
+                this.recorder.destroy()
+            } else {
+                // Start Record
+                this.setState({isRecording: true});
+                Toast.show('Enregistrement en cours ...')
+                this._reloadRecorder()
+            }
         } else {
-            // Start Record
-            this.setState({isRecording: true});
-            Toast.show('Enregistrement en cours ...')
-            this._reloadRecorder()
+            Toast.show("Vous avez initialiement refusé l'accès au microphone. Veuillez autoriser l'accès au microphone dans les paramètres de votre téléphone.",Toast.LONG)
         }
     }
 

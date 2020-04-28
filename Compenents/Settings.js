@@ -2,14 +2,15 @@ import React from 'react'
 import { View, TouchableOpacity, StyleSheet, FlatList,Text, AsyncStorage, Alert } from 'react-native'
 import SettingsItem from '../Compenents/SettingsItem'
 import {widthPercentageToDP, heightPercentageToDP} from 'react-native-responsive-screen';
-
+import DeviceInfo from 'react-native-device-info'
 class Settings extends React.Component {
 
     constructor(props) {
         super(props)
         this.state = {
             settings: [],
-            adrenaline_repeat: undefined
+            adrenaline_repeat: undefined,
+            appVersion: undefined
         }
 
     }
@@ -37,6 +38,9 @@ class Settings extends React.Component {
                 this._initSwitchValue()
               })
             }
+          })
+          this.setState({
+            appVersion: DeviceInfo.getVersion()
           })
     }
 
@@ -96,7 +100,8 @@ class Settings extends React.Component {
     render() {
 
         return (
-          <View>
+          <View style={{flex: 1}}>
+            <View style={{flex: 1}}>
             <View style={{marginTop: widthPercentageToDP('4%')}}>
               <Text style={styles.header}>Mes règlages</Text>
               <FlatList
@@ -113,6 +118,10 @@ class Settings extends React.Component {
                   <Text style={styles.settings_name}>Effacer tous les comptes rendus</Text>
                 </TouchableOpacity>
             </View>
+            </View>
+              <Text style={styles.appVersionContainer}>
+                Version {this.state.appVersion}
+              </Text>
           </View>
         );
       }
@@ -134,7 +143,12 @@ class Settings extends React.Component {
         justifyContent: 'center',
         alignItems: 'center'
       },
-
+      appVersionContainer: {
+        margin: heightPercentageToDP('1%'),
+        fontSize: widthPercentageToDP('3%'),
+        textAlign: 'center',
+        color: '#666666'
+      },
       settings_name: {
           margin: widthPercentageToDP('2%'),
           fontSize: widthPercentageToDP('4%'),
