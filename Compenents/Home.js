@@ -106,7 +106,6 @@ class Home extends React.Component {
 
         // Get count from settings
         var settingsRepeatCount = parseInt(this._getSettingValue('adrenaline_repeat'))
-        console.log("Settings : " + settingsRepeatCount + " Current count : " + this.repeatCount)
         if (this.repeatCount >= settingsRepeatCount) {
             console.log("On stop")
             this._stopReminder()
@@ -159,23 +158,26 @@ class Home extends React.Component {
     }
 
     async _onRecordPress() {
-        if(await this._requestRecordAudioPermission()) {
 
-            if (this.state.isRecording)
-            {
-                //Stop record
-                Toast.show('Enregistrement effectué')
-                this.setState({isRecording: false});
-                this.recorder.destroy()
-            } else {
-                // Start Record
-                this.setState({isRecording: true});
-                Toast.show('Enregistrement en cours ...')
-                this._reloadRecorder()
+        if (Platform.OS == 'android') {
+            if(!await this._requestRecordAudioPermission()) {
+                Toast.show("Vous avez initialiement refusé l'accès au microphone. Veuillez autoriser l'accès au microphone dans les paramètres de votre téléphone.",Toast.LONG)
             }
-        } else {
-            Toast.show("Vous avez initialiement refusé l'accès au microphone. Veuillez autoriser l'accès au microphone dans les paramètres de votre téléphone.",Toast.LONG)
         }
+        
+        if (this.state.isRecording)
+        {
+            //Stop record
+            Toast.show('Enregistrement effectué')
+            this.setState({isRecording: false});
+            this.recorder.destroy()
+        } else {
+            // Start Record
+            this.setState({isRecording: true});
+            Toast.show('Enregistrement en cours ...')
+            this._reloadRecorder()
+        }
+        
     }
 
     // Retrieve settings from AsyncStorage
@@ -428,7 +430,7 @@ class Home extends React.Component {
             <View style={styles.ProgressCircle}>
             <ProgressCircle
                 percent={this.state.progressPercent}
-                radius={hp('12%')}
+                radius={hp('13%')}
                 borderWidth={hp('1%')}
                 color="#3399FF"
                 shadowColor="#999"
@@ -468,7 +470,7 @@ const styles = StyleSheet.create({
 
     timer: {
         alignItems: "center",
-        fontSize: wp('8%')
+        fontSize: wp('7,5%')
     },
 
     container: {

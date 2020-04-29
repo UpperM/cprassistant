@@ -131,7 +131,8 @@ class Settings extends React.Component {
 
       header: {
         fontSize: widthPercentageToDP('5.5%'),
-        margin: widthPercentageToDP('2%')
+        marginTop: heightPercentageToDP('2%'),
+        marginLeft: widthPercentageToDP('2%')
       },
 
       main_container: {
