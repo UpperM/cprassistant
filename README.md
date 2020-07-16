@@ -13,3 +13,6 @@ Une fonction d'enregistrement vocal permet aux soignant d'ajouter des informatio
 
 UN compte rendu est automatiquement enregistré. Celui-ci regroupe toutes les informations de la réanimation (Début, Fin, heure d'injection d'adrénaline,
 quantité exacte de mg d’adrénaline injectée, heure et nombre de choc effectué )
+
+Play Store : https://play.google.com/store/apps/details?id=com.cprassistant
+Apple Store : https://apps.apple.com/fr/app/cpr-assistant/id1510017778?l=fr&ls=1
